@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Order - Algeria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+        }
+
+        header nav ul li {
+            display: inline-block;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #18BC9C;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 50px 20px;
+            background-color: white;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #2C3E50;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #2C3E50;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select,
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #f4f4f4;
+            transition: all 0.3s ease;
+        }
+
+        select:focus,
+        input:focus {
+            border-color: #18BC9C;
+            background-color: white;
+        }
+
+        button.btn-submit {
+            width: 100%;
+            padding: 15px;
+            background-color: #18BC9C;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button.btn-submit:hover {
+            background-color: #16A085;
+        }
+
+        /* Product Image */
+        .product-image {
+            display: block;
+            width: 100%;
+            max-width: 500px;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #18BC9C;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #2C3E50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+
+            .form-group input,
+            .form-group select,
+            button.btn-submit {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Order Your Product</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Product</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="products" class="section">
+            <div class="container">
+                <h2>Select Your Product</h2>
+                <!-- Product Image and Price -->
+            <Div class="row">
+                <Div class="column">
+                     <img src="moulineximg.jpg" alt="Product Image" class="product-image">
+                </Div>
+                <div class="column">
+                     <img src="Moulinex-bras-mixeur-quickchef-DD655D10-1000w-1.jpg" alt="Product Image" class="product-image">
+                </div>
+            </Div>
+                <p><strong>Product Name:</strong> Moulinex easychef 450w</p>
+                <p><strong>Price: 6700DA</strong> 
+            
+                <form id="orderForm" action="backend/submit_order.php" method="POST">
+                    <div class="form-group">
+                        <label for="province">الولاية:</label>
+                        <select id="province" name="province" required>
+                            <option value="Algiers" data-price="650">Alger - 650DA</option>
+                            <option value="Oran" data-price="250">Oran - 250DA</option>
+                            <option value="Constantine" data-price="25">Constantine - 650DA</option>
+                        </select>
+                    </div>
+
+                    <h3>Total Price: <span id="totalPrice">6950DA</span></h3>
+
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="text" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit Order</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Follow us on social media or contact us directly:</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://whatsapp.com/send?phone=1234567890" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+                <p>Phone: +21312345678</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function calculateTotal() {
+                let productPrice = 6700; // Fixed price for this product
+                let provincePrice = parseFloat($('#province option:selected').data('price'));
+                let total = productPrice + provincePrice;
+                $('#totalPrice').text(total.toFixed(2) +'DA'  );
+            }
+
+            $('#province').change(function () {
+                calculateTotal();
+            });
+
+            // Initial calculation on page load
+            calculateTotal();
+        });
+    </script>
+</body>
+
+</html>
